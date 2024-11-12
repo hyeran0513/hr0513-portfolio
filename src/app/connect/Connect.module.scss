@@ -1,0 +1,29 @@
+.connect {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  height: 100px;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+}
+
+.connect a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .connect a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .connect {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
