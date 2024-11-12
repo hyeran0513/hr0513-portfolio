@@ -2,11 +2,13 @@
   "name": "hr0513-portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://hyeran0513.github.io/hr0513-portfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "react": "19.0.0-rc-66855b96-20241106",
