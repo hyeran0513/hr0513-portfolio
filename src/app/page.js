@@ -68,7 +68,7 @@ export default function Home() {
         >
           <Image
             aria-hidden
-            src="/window.svg"
+            src={`${process.env.NODE_ENV === "production" ? "/hr0513-portfolio" : ""}/window.svg`}
             alt="Window icon"
             width={16}
             height={16}
