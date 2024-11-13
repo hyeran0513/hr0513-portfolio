@@ -1,44 +1,63 @@
+"use client";
+
 import styles from "./page.module.scss";
 import AboutClient from "./about/AboutClient";
-import ProjectClient from "./project/ProjectClient";
 import ConnectClient from "./connect/ConnectClient";
-import { FcIdea, FcCommandLine, FcContacts } from "react-icons/fc";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
+import ProfileClient from "./profile/ProfileClient";
+import { projects } from "./data";
+import ProjectCard from "@/components/projectCard/ProjectCard";
 
 export default function Home() {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const horizontal = document.querySelector("#horizontal");
+    const sections = gsap.utils.toArray("#horizontal > section");
+
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: horizontal,
+        start: "top top",
+        end: () => `+=${horizontal.scrollWidth - window.innerWidth}`,
+        pin: true,
+        scrub: 1,
+        snap: {
+          snapTo: 1 / (sections.length - 1),
+          inertia: false,
+          duration: { min: 0.1, max: 0.1 },
+        },
+        invalidateOnRefresh: true,
+        anticipatePin: 1,
+      },
+    });
+  }, []);
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <section id="about">
-          <span className={styles.title}>
-            <FcIdea className={styles.icon} />
-            
-            <div className={styles.txt}>
-              <div>Front-End Developer</div> 
-              <div className={styles.userName}>김혜란</div>
-            </div>
-          </span>
+    <main>
+      <section id="about" className={styles.section}>
+        <ProfileClient />
+      </section>
 
-          <AboutClient />
-        </section>
+      <section className={styles.section}>
+        <AboutClient />
+      </section>
 
-        <section id="project">
-          <span className={styles.title}>
-            <FcCommandLine className={styles.icon} />
-            <span className={styles.txt}>Project</span>
-          </span>
-
-          <ProjectClient /> 
-        </section>
-
-        <section id="connect">
-          <p className={styles.title}>
-            <FcContacts className={styles.icon} />
-            <span className={styles.txt}>Connect</span>
-          </p>
-
-          <ConnectClient />
-        </section>
+      <main id="horizontal" className={styles.horizontal}>
+        {projects.map((project, index) => (
+          <section key={index} className={styles.section}>
+            <ProjectCard project={project} />
+          </section>
+        ))}
       </main>
-    </div>
+
+      <section id="connect" className={styles.section}>
+        <ConnectClient />
+      </section>
+    </main>
   );
 }

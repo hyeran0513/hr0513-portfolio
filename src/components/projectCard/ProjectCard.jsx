@@ -3,30 +3,8 @@ import styles from "./ProjectCard.module.scss";
 import { FcServices, FcBrokenLink, FcSms } from "react-icons/fc";
 
 const ProjectCard = ({ project }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const cardRef = useRef();
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target); // 한 번만 애니메이션 실행
-        }
-      },
-      { threshold: 0.5 } // 50%가 화면에 보일 때 애니메이션 시작
-    );
-
-    if (cardRef.current) observer.observe(cardRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div
-      className={`${styles.projectCard} ${isVisible ? styles.visible : ""}`}
-      ref={cardRef}
-    >
+    <div className={styles.projectCard}>
       <p className={styles.projectName}>{project.projectName}</p>
 
       <div className={styles.projectInfo}>
@@ -38,9 +16,7 @@ const ProjectCard = ({ project }) => {
       <p className={styles.projectDescription}>{project.description}</p>
 
       <div className={styles.flexBox}>
-        <div
-          className={`${styles.thumb} ${isVisible ? styles.thumbVisible : ""}`}
-        >
+        <div className={styles.thumb}>
           <div
             className={styles.thumbImg}
             style={{
@@ -49,9 +25,7 @@ const ProjectCard = ({ project }) => {
           ></div>
         </div>
 
-        <div
-          className={`${styles.info} ${isVisible ? styles.infoVisible : ""}`}
-        >
+        <div className={styles.info}>
           <div className={styles.infoItem}>
             <p className={styles.title}>
               <FcServices />

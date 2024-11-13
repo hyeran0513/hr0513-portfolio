@@ -19,12 +19,14 @@ const AboutClient = () => {
           <div className={styles.infoBox}>
             <p className={styles.title}><FcBusinessContact />PROFILE</p>
 
-            {profileData.map((item, index) => (
-              <dl className={styles.infoItem} key={index}>
-                <dt>{item.txt}</dt>
-                <dd>{item.value}</dd>
-              </dl>
-            ))}
+            <div className={styles.infoList}>
+              {profileData.map((item, index) => (
+                <dl className={styles.infoItem} key={index}>
+                  <dt>{item.txt}</dt>
+                  <dd>{item.value}</dd>
+                </dl>
+              ))}
+            </div>
           </div>
         )}
 
@@ -32,12 +34,14 @@ const AboutClient = () => {
           <div className={styles.infoBox}>
             <p className={styles.title}><FcCloseUpMode />AWARDS</p>
 
-            {awardsData.map((item, index) => (
-              <dl className={styles.infoItem} key={index}>
-                <dt>{item.date}</dt>
-                <dd>{item.txt}</dd>
-              </dl>
-            ))}
+            <div className={styles.infoList}>
+              {awardsData.map((item, index) => (
+                <dl className={styles.infoItem} key={index}>
+                  <dt>{item.date}</dt>
+                  <dd>{item.txt}</dd>
+                </dl>
+              ))}
+            </div>
           </div>
         )}
 
@@ -45,12 +49,14 @@ const AboutClient = () => {
           <div className={styles.infoBox}>
             <p className={styles.title}><FcSportsMode />ACTIVITIES</p>
 
-            {activitiesData.map((item, index) => (
-              <dl className={styles.infoItem} key={index}>
-                <dt>{item.date}</dt>
-                <dd>{item.txt}</dd>
-              </dl>
-            ))}
+            <div className={styles.infoList}>
+              {activitiesData.map((item, index) => (
+                <dl className={styles.infoItem} key={index}>
+                  <dt>{item.date}</dt>
+                  <dd>{item.txt}</dd>
+                </dl>
+              ))}
+            </div>
           </div>
         )}
 
@@ -62,7 +68,7 @@ const AboutClient = () => {
               {stackData.map((item, index) => (
                 <div key={index} className={styles.stack}>
                   <span
-                    className={`${styles.icon} ${styles[item.icon]}`}
+                    className={`${styles.stackIcon} ${styles[item.icon]}`}
                     style={{
                       background: `url(${process.env.ASSET_PREFIX}/stackIcon.svg) no-repeat center/auto 100%`,
                     }}
@@ -78,12 +84,14 @@ const AboutClient = () => {
           <div className={`${styles.infoBox} ${styles.half}`}>
             <p className={styles.title}><FcFolder />PROJECT</p>
 
-            {projectData.map((item, index) => (
-              <dl className={styles.infoItem} key={index}>
-                <dt>{item.date}</dt>
-                <dd>{item.txt}</dd>
-              </dl>
-            ))}
+            <div className={styles.infoList}>
+              {projectData.map((item, index) => (
+                <dl className={styles.infoItem} key={index}>
+                  <dt>{item.date}</dt>
+                  <dd>{item.txt}</dd>
+                </dl>
+              ))}
+            </div>
           </div>
         )}
       </div>

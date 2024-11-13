@@ -7,7 +7,7 @@ import { VscMail } from "react-icons/vsc"
 
 const ConnectClient = () => {
   return (
-    <div className={styles.connect}>
+    <div className={styles.page}>
       <a
         href="https://github.com/hyeran0513"
         target="_blank"

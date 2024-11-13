@@ -1,9 +1,12 @@
 .projectCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
   max-width: 1280px;
+  height: 100vh;
   font-size: 18px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
   position: relative;
 
   &:not(:first-child) {
@@ -34,20 +37,12 @@
 .flexBox {
   display: flex;
   gap: 40px;
-  margin-top: 50px;
-}
-
-.projectCard.visible {
-  opacity: 1;
-  transform: translateY(0);
+  margin-top: 60px;
 }
 
 .thumb {
   width: 50%;
   border-radius: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
 
   &Img {
     width: 100%;
@@ -56,17 +51,11 @@
   }
 }
 
-.thumbVisible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   flex: 1;
-  margin-top: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.5s;
 
   &Item {
     .title {
@@ -131,9 +120,4 @@
       }
     }
   }
-}
-
-.infoVisible {
-  opacity: 1;
-  transform: translateY(0);
 }
