@@ -4,7 +4,7 @@ import styles from './Profile.module.scss';
 import { PiMouseSimpleThin } from "react-icons/pi";
 import { FaCloud } from "react-icons/fa";
 
-const ProfileClient = () => {
+const Profile = () => {
   useEffect(() => {
     gsap.fromTo(
       `.${styles.title} div`, 
@@ -35,4 +35,4 @@ const ProfileClient = () => {
   );
 };
 
-export default ProfileClient;
+export default Profile;

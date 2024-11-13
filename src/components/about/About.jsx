@@ -11,7 +11,7 @@ import {
 } from "./data";
 import { FcFolder, FcCloseUpMode, FcBusinessContact, FcSupport, FcSportsMode } from "react-icons/fc";
 
-const AboutClient = () => {
+const About = () => {
   return (
     <div className={styles.page}>
       <div className={styles.info}>
@@ -99,4 +99,4 @@ const AboutClient = () => {
   );
 };
 
-export default AboutClient;
+export default About;

@@ -1,14 +1,14 @@
 "use client";
 
 import styles from "./page.module.scss";
-import AboutClient from "./about/AboutClient";
-import ConnectClient from "./connect/ConnectClient";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
-import ProfileClient from "./profile/ProfileClient";
 import { projects } from "./data";
 import ProjectCard from "@/components/projectCard/ProjectCard";
+import About from "@/components/about/About";
+import Profile from "@/components/profile/Profile";
+import Contact from "@/components/contact/Contact";
 
 export default function Home() {
   useEffect(() => {
@@ -40,11 +40,11 @@ export default function Home() {
   return (
     <main>
       <section id="about" className={styles.section}>
-        <ProfileClient />
+        <Profile />
       </section>
 
       <section className={styles.section}>
-        <AboutClient />
+        <About />
       </section>
 
       <main id="horizontal" className={styles.horizontal}>
@@ -56,7 +56,7 @@ export default function Home() {
       </main>
 
       <section id="connect" className={styles.section}>
-        <ConnectClient />
+        <Contact />
       </section>
     </main>
   );

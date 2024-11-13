@@ -1,11 +1,11 @@
 "use client";
 
 import React from 'react'
-import styles from './Connect.module.scss'
+import styles from './Contact.module.scss'
 import { VscGithubInverted } from "react-icons/vsc"
 import { VscMail } from "react-icons/vsc"
 
-const ConnectClient = () => {
+const Contact = () => {
   return (
     <div className={styles.page}>
       <a
@@ -17,7 +17,7 @@ const ConnectClient = () => {
         https://github.com/hyeran0513
       </a>
       <a
-        href="#Connect"
+        href="#Contact"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -28,4 +28,4 @@ const ConnectClient = () => {
   )
 }
 
-export default ConnectClient
+export default Contact
