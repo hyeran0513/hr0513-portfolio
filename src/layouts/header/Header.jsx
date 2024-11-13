@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <div className={styles.headerInner}>
-        <div>Hyeran's portfolio</div>
+        <div>Hyeran&apos;s portfolio</div>
 
         <div className={styles.isActive}>활동 중</div>
       </div>
