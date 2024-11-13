@@ -29,8 +29,9 @@ const ProjectCard = ({ project }) => {
           <div className={styles.infoItem}>
             <p className={styles.title}>
               <FcServices />
-              Tech Stack
+              스택
             </p>
+
             <ul className={styles.stackList}>
               {project.stack.map((tech, techIndex) => (
                 <li className={styles.stackItem} key={techIndex}>
@@ -41,7 +42,6 @@ const ProjectCard = ({ project }) => {
                     }}
                   ></div>
                   <div className={styles.txt}>{tech.txt}</div>
-                  <div className={styles.percent}>{tech.percent}</div>
                 </li>
               ))}
             </ul>
@@ -50,8 +50,9 @@ const ProjectCard = ({ project }) => {
           <div className={styles.infoItem}>
             <p className={styles.title}>
               <FcBrokenLink />
-              Link
+              링크
             </p>
+
             <a href={project.link} target="_blank" rel="noopener noreferrer">
               {project.link}
             </a>
@@ -60,9 +61,10 @@ const ProjectCard = ({ project }) => {
           <div className={styles.infoItem}>
             <p className={styles.title}>
               <FcSms />
-              Review
+              소감
             </p>
-            <p>{project.review}</p>
+
+            <div className={styles.review}>{project.review}</div>
           </div>
         </div>
       </div>

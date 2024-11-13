@@ -16,12 +16,13 @@
   .isActive {
     position: relative;
     margin-left: auto;
+    font-size: 14px;
   
     &::before {
       content: "";
       display: block;
       position: absolute;
-      top: 30%;
+      top: 24%;
       left: -1.5rem;
       width: 0.5rem;
       height: 0.5rem;

@@ -2,13 +2,48 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 40px;
+  position: relative;
   height: 100vh;
 
-  & > a {
+  .title {
+    font-size: 82px;
+    color: #10C06B;
+  }
+
+  .cloudIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 90px;
+
+    &.first {
+      left: 20%;
+    }
+
+    &.second {
+      right: 20%;
+    }
+  }
+
+  .list {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 20px;
-    font-size: 24px;
+
+    &Item {
+      & > a {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 24px;
+        transition: all ease .2s;
+
+        &:hover {
+          color: #10C06B;
+        }
+      }
+    }
   }
 }
