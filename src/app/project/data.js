@@ -1,4 +1,4 @@
-export const data = [
+export const projects = [
   {
     thumb: 'tip.png',
     projectName: 'TIP 매니저 활동지원 시스템 (M.A.P)',
