@@ -1,97 +1,70 @@
-.gridContainer {
+.page {
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
   margin: 0 auto;
   max-width: 1280px;
   height: 100vh;
-}
 
-.swiperContainer {
-  display: none !important;
-}
+  .info {
+    margin-bottom: 60px;
 
-.info {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-
-  &List {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  &Box {
-    padding: 20px;
-    border: 1px solid #fff;
-
-    .title {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 20px;
-      color: #10c06b;
-      font-size: 18px;
-    }
-  }
-
-  &Item {
-    & > dt {
-      margin-bottom: 8px;
+    .userName {
+      font-size: 40px;
     }
 
-    & > dd {
-      color: #a2a2a2;
-    }
-  }
-}
-
-.stack {
-  padding: 4px 8px;
-  border: 1px solid #fff;
-
-  &Wrap {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-}
-
-@media (max-width: 768px) {
-  .gridContainer {
-    display: none;
-  }
-
-  .swiperContainer {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-
-    .swiperSlide {
+    .contactInfo {
       display: flex;
       align-items: center;
-      height: 100%;
-    }
+      gap: 20px;
+      margin-top: 20px;
 
-    .item {
-      margin: 0 20px;
-      width: 100%;
-    }
+      .infoItem {
+        display: flex;
+        align-items: center;
 
-    .info {
-      &Item {
         & > dt {
-          margin-bottom: 4px;
-          font-size: 14px;
+          display: flex;
+          align-items: center;
+          margin-right: 10px;
         }
+      }
+    }
+  }
 
-        & > dd {
-          line-height: 1.3;
-          font-size: 14px;
-          word-break: keep-all;
-        }
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .career,
+  .award,
+  .skill,
+  .project {
+    .title {
+      margin-bottom: 30px;
+      padding: 10px 0 10px 20px;
+      border-left: 6px solid #111;
+      font-size: 24px;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      &Item {
+        padding: 4px 8px;
+        display: inline-block;
+        border: 1px solid #111;
+        border-radius: 4px;
       }
     }
   }

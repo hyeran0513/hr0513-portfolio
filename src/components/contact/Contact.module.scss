@@ -8,23 +8,7 @@
   height: 100vh;
 
   .title {
-    font-size: 82px;
-    color: #10C06B;
-  }
-
-  .cloudIcon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 90px;
-
-    &.first {
-      left: 20%;
-    }
-
-    &.second {
-      right: 20%;
-    }
+    font-size: 150px;
   }
 
   .list {
@@ -36,12 +20,13 @@
       & > a {
         display: flex;
         align-items: center;
-        gap: 14px;
-        font-size: 24px;
+        gap: 30px;
+        font-size: 40px;
         transition: all ease .2s;
 
         &:hover {
-          color: #10C06B;
+          text-decoration: underline;
+          text-underline-offset: 0.5rem;
         }
       }
     }
@@ -55,10 +40,6 @@
 
     .title {
       font-size: 28px;
-    }
-
-    .cloudIcon {
-      display: none;
     }
 
     .list {

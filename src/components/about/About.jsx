@@ -1,226 +1,111 @@
-"use client";
-
 import React from "react";
 import styles from "./About.module.scss";
-import {
-  profileData,
-  awardsData,
-  activitiesData,
-  projectData,
-  stackData,
-} from "./data";
-import {
-  FcFolder,
-  FcCloseUpMode,
-  FcBusinessContact,
-  FcSupport,
-  FcSportsMode,
-} from "react-icons/fc";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 const About = () => {
+  const skills = [
+    "Nuxt.js",
+    "Vue.js",
+    "Next.js",
+    "PHP",
+    "SCSS",
+    "HTML",
+    "jQuery",
+  ];
+
   return (
-    <>
-      <div className={styles.gridContainer}>
-        <div className={styles.info}>
-          {profileData.length > 0 && (
-            <div className={styles.infoBox}>
-              <p className={styles.title}>
-                <FcBusinessContact />
-                PROFILE
-              </p>
+    <div className={styles.page}>
+      <div className={styles.info}>
+        <div className={styles.userName}>김혜란</div>
+        <div className={styles.age}>2000 (24세)</div>
 
-              <div className={styles.infoList}>
-                {profileData.map((item, index) => (
-                  <dl className={styles.infoItem} key={index}>
-                    <dt>{item.txt}</dt>
-                    <dd>{item.value}</dd>
-                  </dl>
-                ))}
-              </div>
-            </div>
-          )}
+        <div className={styles.contactInfo}>
+          <dl className={styles.infoItem}>
+            <dt className={styles.infoTitle}>이메일</dt>
+            <dd className={styles.infoContent}>hr_0513@naver.com</dd>
+          </dl>
 
-          {awardsData.length > 0 && (
-            <div className={styles.infoBox}>
-              <p className={styles.title}>
-                <FcCloseUpMode />
-                AWARDS
-              </p>
+          <dl className={styles.infoItem}>
+            <dt className={styles.infoTitle}>휴대폰</dt>
+            <dd className={styles.infoContent}>010-3129-8980</dd>
+          </dl>
 
-              <div className={styles.infoList}>
-                {awardsData.map((item, index) => (
-                  <dl className={styles.infoItem} key={index}>
-                    <dt>{item.date}</dt>
-                    <dd>{item.txt}</dd>
-                  </dl>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {activitiesData.length > 0 && (
-            <div className={styles.infoBox}>
-              <p className={styles.title}>
-                <FcSportsMode />
-                ACTIVITIES
-              </p>
-
-              <div className={styles.infoList}>
-                {activitiesData.map((item, index) => (
-                  <dl className={styles.infoItem} key={index}>
-                    <dt>{item.date}</dt>
-                    <dd>{item.txt}</dd>
-                  </dl>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {stackData.length > 0 && (
-            <div className={styles.infoBox}>
-              <p className={styles.title}>
-                <FcSupport />
-                TECH.STACK
-              </p>
-
-              <div className={styles.stackWrap}>
-                {stackData.map((item, index) => (
-                  <div key={index} className={styles.stack}>
-                    <span
-                      className={`${styles.stackIcon} ${styles[item.icon]}`}
-                      style={{
-                        background: `url(${process.env.ASSET_PREFIX}/stackIcon.svg) no-repeat center/auto 100%`,
-                      }}
-                    ></span>
-                    <span className={styles.txt}>{item.txt}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {projectData.length > 0 && (
-            <div className={styles.infoBox}>
-              <p className={styles.title}>
-                <FcFolder />
-                PROJECT
-              </p>
-
-              <div className={styles.infoList}>
-                {projectData.map((item, index) => (
-                  <dl className={styles.infoItem} key={index}>
-                    <dt>{item.date}</dt>
-                    <dd>{item.txt}</dd>
-                  </dl>
-                ))}
-              </div>
-            </div>
-          )}
+          <dl className={styles.infoItem}>
+            <dt className={styles.infoTitle}>깃허브</dt>
+            <dd className={styles.infoContent}>
+              https://github.com/hyeran0513
+            </dd>
+          </dl>
         </div>
       </div>
 
-      <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        className={styles.swiperContainer}
-      >
-        <SwiperSlide className={styles.swiperSlide}>
-          <div className={styles.item}>
-            {profileData.length > 0 && (
-              <div className={styles.infoBox}>
-                <p className={styles.title}>
-                  <FcBusinessContact />
-                  PROFILE
-                </p>
+      <div className={styles.gridContainer}>
+        <div className={styles.career}>
+          <p className={styles.title}>경력</p>
 
-                <div className={styles.infoList}>
-                  {profileData.map((item, index) => (
-                    <dl className={styles.infoItem} key={index}>
-                      <dt>{item.txt}</dt>
-                      <dd>{item.value}</dd>
-                    </dl>
-                  ))}
+          <ul className={styles.list}>
+            <li className={styles.listItem}>
+              2023.11 ~ 2024.09 (주)윌비소프트 정규직 - 프론트엔드 & 퍼블리셔
+            </li>
+            <li className={styles.listItem}>
+              2022.08 ~ 2023.03 (주)핌즈 일학습병행 및 정규직 - 백엔드
+            </li>
+          </ul>
+        </div>
+
+        <div className={styles.award}>
+          <p className={styles.title}>자격/수상</p>
+
+          <ul className={styles.list}>
+            <li className={styles.listItem}>2024.04 SQL개발자(SQLD 자격)</li>
+            <li className={styles.listItem}>2023.02 IPP형 일학습병행 우수상</li>
+            <li className={styles.listItem}>
+              2022.01 캡스톤디자인 경진대회 동상
+            </li>
+            <li className={styles.listItem}>2021.12 한이음 공모전 입선</li>
+          </ul>
+        </div>
+
+        <div className={styles.skill}>
+          <p className={styles.title}>스킬</p>
+
+          <div className={styles.stack}>
+            {skills &&
+              skills.map((item, index) => (
+                <div key={index} className={styles.stackItem}>
+                  {item}
                 </div>
-              </div>
-            )}
+              ))}
           </div>
-        </SwiperSlide>
+        </div>
 
-        <SwiperSlide className={styles.swiperSlide}>
-          <div className={styles.item}>
-            {awardsData.length > 0 && (
-              <div className={styles.infoBox}>
-                <p className={styles.title}>
-                  <FcCloseUpMode />
-                  AWARDS
-                </p>
+        <div className={styles.project}>
+          <p className={styles.title}>프로젝트 (최신순)</p>
 
-                <div className={styles.infoList}>
-                  {awardsData.map((item, index) => (
-                    <dl className={styles.infoItem} key={index}>
-                      <dt>{item.date}</dt>
-                      <dd>{item.txt}</dd>
-                    </dl>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </SwiperSlide>
+          <ul className={styles.list}>
+            <li className={styles.listItem}>
+              2024.07 ~ 2024.09 TIP 매니저 활동지원 시스템 (M.A.P) (주)
+              윌비소프트
+            </li>
 
-        <SwiperSlide className={styles.swiperSlide}>
-          <div className={styles.item}>
-            {activitiesData.length > 0 && (
-              <div className={styles.infoBox}>
-                <p className={styles.title}>
-                  <FcSportsMode />
-                  ACTIVITIES
-                </p>
+            <li className={styles.listItem}>
+              2024.01 ~ 2024.04 사스다(SAASDA) 서비스 홈페이지 (주) 윌비소프트
+            </li>
 
-                <div className={styles.infoList}>
-                  {activitiesData.map((item, index) => (
-                    <dl className={styles.infoItem} key={index}>
-                      <dt>{item.date}</dt>
-                      <dd>{item.txt}</dd>
-                    </dl>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </SwiperSlide>
+            <li className={styles.listItem}>
+              2023.11 ~ 2024.09 사스다(SAASDA) 운영 홈페이지 (주) 윌비소프트
+            </li>
 
-        <SwiperSlide className={styles.swiperSlide}>
-          <div className={styles.item}>
-            {projectData.length > 0 && (
-              <div className={`${styles.infoBox} ${styles.half}`}>
-                <p className={styles.title}>
-                  <FcFolder />
-                  PROJECT
-                </p>
+            <li className={styles.listItem}>
+              2023.11 ~ 2023.12 하남 커리어넷 (주) 윌비소프트
+            </li>
 
-                <div className={styles.infoList}>
-                  {projectData.map((item, index) => (
-                    <dl className={styles.infoItem} key={index}>
-                      <dt>{item.date}</dt>
-                      <dd>{item.txt}</dd>
-                    </dl>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </SwiperSlide>
-      </Swiper>
-    </>
+            <li className={styles.listItem}>
+              2022.08 ~ 2023.08 자사 홈페이지 웹 개발 및 유지보수 (주) 핌즈
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 };
 

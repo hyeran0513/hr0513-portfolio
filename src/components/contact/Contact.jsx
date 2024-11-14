@@ -4,14 +4,11 @@ import React from "react";
 import styles from "./Contact.module.scss";
 import { VscGithubInverted } from "react-icons/vsc";
 import { VscMail } from "react-icons/vsc";
-import { FaCloud } from "react-icons/fa";
 
 const Contact = () => {
   return (
     <div className={styles.page}>
-      <FaCloud className={`${styles.cloudIcon} ${styles.first}`} />
       <p className={styles.title}>Contact</p>
-      <FaCloud className={`${styles.cloudIcon} ${styles.second}`} />
 
       <ul className={styles.list}>
         <li className={styles.listItem}>

@@ -4,8 +4,8 @@
 }
 
 @font-face {
-  font-family: 'NeoDunggeunmo';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.3/NeoDunggeunmo.woff') format('woff');
+  font-family: 'Tenada';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -19,7 +19,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'NeoDunggeunmo', sans-serif;
+  font-family: 'Tenada', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

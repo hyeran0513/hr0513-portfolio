@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./ProjectCard.module.scss";
-import { FcServices, FcBrokenLink, FcSms } from "react-icons/fc";
 
 const ProjectCard = ({ project }) => {
   const [thumbShow, setThumbShow] = useState(false);
@@ -39,7 +38,6 @@ const ProjectCard = ({ project }) => {
         <div className={styles.info}>
           <div className={styles.infoItem}>
             <p className={styles.title}>
-              <FcServices />
               스택
             </p>
 
@@ -60,7 +58,6 @@ const ProjectCard = ({ project }) => {
 
           <div className={styles.infoItem}>
             <p className={styles.title}>
-              <FcBrokenLink />
               링크
             </p>
 
@@ -71,7 +68,6 @@ const ProjectCard = ({ project }) => {
 
           <div className={styles.infoItem}>
             <p className={styles.title}>
-              <FcSms />
               소감
             </p>
 
