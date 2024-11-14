@@ -13,17 +13,17 @@ import Contact from "@/components/contact/Contact";
 export default function Home() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
+  
     const horizontal = document.querySelector("#horizontal");
     const sections = gsap.utils.toArray("#horizontal > section");
-
+  
     gsap.to(sections, {
       xPercent: -100 * (sections.length - 1),
       ease: "none",
       scrollTrigger: {
         trigger: horizontal,
         start: "top top",
-        end: () => "+=" + (horizontal.offsetWidth - innerWidth),
+        end: () => `+=${horizontal.scrollWidth - window.innerWidth}`,
         pin: true,
         scrub: 1,
         snap: {
@@ -35,7 +35,7 @@ export default function Home() {
         anticipatePin: 1,
       },
     });
-  }, []);
+  }, []);  
 
   return (
     <main>
