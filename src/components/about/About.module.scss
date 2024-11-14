@@ -38,6 +38,10 @@
     gap: 30px;
   }
 
+  .swiperContainer {
+    display: none !important;
+  }
+
   .career,
   .award,
   .skill,
@@ -65,6 +69,68 @@
         display: inline-block;
         border: 1px solid #111;
         border-radius: 4px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    .info {
+      margin: 30px 20px;
+
+      .userName {
+        font-size: 24px;
+      }
+
+      .contactInfo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+
+        .infoItem {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .gridContainer {
+      display: none;
+    }
+
+    .swiperContainer {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      .swiperSlide {
+        display: flex;
+        align-items: center;
+        height: 100%;
+      }
+
+      .career,
+      .award,
+      .skill,
+      .project {
+        margin: 0 20px;
+        padding: 20px;
+        width: 100%;
+        border: 1px solid #111;
+        border-radius: 10px;
+        font-size: 14px;
+
+        .title {
+          margin-bottom: 20px;
+          padding: 6px 0 6px 10px;
+          font-size: 16px;
+          border-width: 4px;
+        }
+
+        .list {
+          word-break: keep-all;
+        }
       }
     }
   }

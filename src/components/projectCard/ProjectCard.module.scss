@@ -159,7 +159,7 @@
 
     &.isShow {
       padding-top: 20px;
-      border-top: 1px dashed #FFF;
+      border-top: 1px dashed #111;
 
       .thumb {
         display: none;
@@ -186,12 +186,12 @@
       left: 50%;
       transform: translate(-50%, -50%);
       display: block;
-      padding: 10px;
-      background-color: rgba(0, 0, 0, 0.8);
-      border: 2px solid #10c06b;
-      color: #10c06b;
-      border-radius: 4px;
-      font-size: 16px;
+      padding: 6px 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: 0;
+      border-radius: 30px;
+      font-size: 14px;
       font-family: 'NeoDunggeunmo';
     }
   }
@@ -212,9 +212,14 @@
             width: 40px;
             height: 40px;
           }
+
+          .txt {
+            font-size: 12px;
+          }
         }
       }
 
+      .link,
       .review {
         font-size: 14px;
       }

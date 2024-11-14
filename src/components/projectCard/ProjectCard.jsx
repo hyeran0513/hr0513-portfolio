@@ -61,7 +61,7 @@ const ProjectCard = ({ project }) => {
               링크
             </p>
 
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
+            <a className={styles.link} href={project.link} target="_blank" rel="noopener noreferrer">
               {project.link}
             </a>
           </div>

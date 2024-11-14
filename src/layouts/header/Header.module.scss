@@ -10,7 +10,14 @@
     margin: 0 auto;
     max-width: 1280px;
     height: 100%;
-    border-top: 2px solid #FFF;
-    border-bottom: 1px solid #FFF;
+    background-color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    &Inner {
+      padding: 0 20px;
+    }
   }
 }
