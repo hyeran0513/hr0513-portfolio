@@ -22,10 +22,15 @@ export default function Home() {
       ease: "none",
       scrollTrigger: {
         trigger: horizontal,
-        end: () => "+=" + horizontal.offsetWidth,
+        start: "top top",
+        end: () => "+=" + (horizontal.offsetWidth - innerWidth),
         pin: true,
         scrub: 1,
-        snap: 1 / (sections.length - 1),
+        snap: {
+          snapTo: 1 / (sections.length - 1),
+          inertia: false,
+          duration: { min: 0.1, max: 0.1 },
+        },
         invalidateOnRefresh: true,
         anticipatePin: 1,
       },
