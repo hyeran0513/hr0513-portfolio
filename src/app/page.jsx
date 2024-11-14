@@ -22,15 +22,10 @@ export default function Home() {
       ease: "none",
       scrollTrigger: {
         trigger: horizontal,
-        start: "top top",
-        end: () => `+=${horizontal.scrollWidth - window.innerWidth}`,
+        end: () => "+=" + horizontal.offsetWidth,
         pin: true,
         scrub: 1,
-        snap: {
-          snapTo: 1 / (sections.length - 1),
-          inertia: false,
-          duration: { min: 0.1, max: 0.1 },
-        },
+        snap: 1 / (sections.length - 1),
         invalidateOnRefresh: true,
         anticipatePin: 1,
       },
@@ -39,11 +34,11 @@ export default function Home() {
 
   return (
     <main>
-      <section id="about" className={styles.section}>
+      <section id="profile" className={styles.section}>
         <Profile />
       </section>
 
-      <section className={styles.section}>
+      <section id="about" className={styles.section}>
         <About />
       </section>
 

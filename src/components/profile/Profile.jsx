@@ -8,14 +8,8 @@ const Profile = () => {
   useEffect(() => {
     gsap.fromTo(
       `.${styles.title} div`, 
-      { opacity: 0, y: -50 }, 
+      { opacity: 0, y: 50 }, 
       { opacity: 1, y: 0, duration: 1, stagger: 0.3 }
-    );
-    
-    gsap.fromTo(
-      `.${styles.icon}`, 
-      { opacity: 0, x: -50 }, 
-      { opacity: 1, x: 0, duration: 1, delay: 1 }
     );
   }, []);
 
