@@ -40,3 +40,30 @@ ul, ol {
   padding: 0;
   margin: 0;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 30px !important;
+  height: 30px !important;
+  background: #222;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  transform: translateY(20%);
+
+  &::after {
+    font-size: 14px !important;
+    color: #FFF;
+  }  
+}
+
+.swiper-button-prev {
+  left: 5px !important;
+}
+
+.swiper-button-next {
+  right: 5px !important;
+}
+
+.swiper-pagination-bullet {
+  background: #FFF !important;
+}

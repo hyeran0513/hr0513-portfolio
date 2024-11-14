@@ -60,3 +60,11 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .header {
+    &Inner {
+      padding: 0 20px;
+    }
+  }  
+}

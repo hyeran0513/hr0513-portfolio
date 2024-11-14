@@ -1,55 +1,98 @@
-.page {
+.gridContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
   max-width: 1280px;
   height: 100vh;
+}
 
-  .info {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.swiperContainer {
+  display: none !important;
+}
 
-    &List {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
+.info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 
-    &Box {
-      padding: 20px;
-      border: 1px solid #fff;
+  &List {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
 
-      .title {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 20px;
-        color: #10C06B;
-        font-size: 18px;
-      }
-    }
+  &Box {
+    padding: 20px;
+    border: 1px solid #fff;
 
-    &Item {
-      & > dt {
-        margin-bottom: 8px;
-      }
-
-      & > dd {
-        color: #a2a2a2;
-      }
+    .title {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      color: #10c06b;
+      font-size: 18px;
     }
   }
 
-  .stack {
-    padding: 4px 8px;
-    border: 1px solid #FFF;
+  &Item {
+    & > dt {
+      margin-bottom: 8px;
+    }
 
-    &Wrap {
+    & > dd {
+      color: #a2a2a2;
+    }
+  }
+}
+
+.stack {
+  padding: 4px 8px;
+  border: 1px solid #fff;
+
+  &Wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gridContainer {
+    display: none;
+  }
+
+  .swiperContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    .swiperSlide {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      align-items: center;
+      height: 100%;
+    }
+
+    .item {
+      margin: 0 20px;
+      width: 100%;
+    }
+
+    .info {
+      &Item {
+        & > dt {
+          margin-bottom: 4px;
+          font-size: 14px;
+        }
+
+        & > dd {
+          line-height: 1.3;
+          font-size: 14px;
+          word-break: keep-all;
+        }
+      }
     }
   }
 }
