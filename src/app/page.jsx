@@ -25,7 +25,7 @@ export default function Home() {
         end: `+=${document.querySelector("#horizontal").scrollWidth - window.innerWidth}`,
         pin: true,
         scrub: 1,
-        snap: { snapTo: 1 / sections.length, inertia: false, duration: 0.1 },
+        snap: { snapTo: 1 / (sections.length - 1), inertia: false, duration: 0.1 },
         invalidateOnRefresh: true,
         anticipatePin: 1,
       },
@@ -45,7 +45,7 @@ export default function Home() {
       <main id="horizontal" className={styles.horizontal}>
         {projects.map((project, index) => (
           <section key={index} className={styles.section} id={`hor${index}`}>
-            <ProjectCard project={project} />
+            <ProjectCard project={project} projectIdx={index} />
           </section>
         ))}
       </main>

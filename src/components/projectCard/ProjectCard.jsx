@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./ProjectCard.module.scss";
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, projectIdx }) => {
   const [thumbShow, setThumbShow] = useState(false);
 
   return (
     <div className={styles.projectCard}>
+      <div className={`${styles.projectNum} ${styles[`projectNum${projectIdx + 1}`]}`}>PROJECT {projectIdx + 1}</div>
+
       <p className={styles.projectName}>{project.projectName}</p>
 
       <div className={styles.projectInfo}>

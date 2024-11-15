@@ -24,22 +24,22 @@ const About = () => {
         <div className={styles.age}>2000 (24세)</div>
 
         <div className={styles.contactInfo}>
-          <dl className={styles.infoItem}>
-            <dt className={styles.infoTitle}>이메일</dt>
-            <dd className={styles.infoContent}>hr_0513@naver.com</dd>
-          </dl>
+          <div className={styles.infoItem}>
+            <div className={styles.infoTitle}>이메일</div>
+            <div className={styles.infoContent}>hr_0513@naver.com</div>
+          </div>
 
-          <dl className={styles.infoItem}>
-            <dt className={styles.infoTitle}>휴대폰</dt>
-            <dd className={styles.infoContent}>010-3129-8980</dd>
-          </dl>
+          <div className={styles.infoItem}>
+            <div className={styles.infoTitle}>휴대폰</div>
+            <div className={styles.infoContent}>010-3129-8980</div>
+          </div>
 
-          <dl className={styles.infoItem}>
-            <dt className={styles.infoTitle}>깃허브</dt>
-            <dd className={styles.infoContent}>
+          <div className={styles.infoItem}>
+            <div className={styles.infoTitle}>깃허브</div>
+            <div className={styles.infoContent}>
               https://github.com/hyeran0513
-            </dd>
-          </dl>
+            </div>
+          </div>
         </div>
       </div>
 

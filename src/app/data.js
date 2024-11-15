@@ -1,6 +1,6 @@
 export const projects = [
   {
-    thumb: 'tip.png',
+    thumb: 'map.png',
     projectName: 'TIP 매니저 활동지원 시스템 (M.A.P)',
     projectPeriod: '2024.07 ~ 2024.09',
     person: '팀프로젝트 (프론트엔드: 1명, 백엔드: 3명, 디자이너: 1명, 기획자: 1명)',
@@ -49,7 +49,7 @@ export const projects = [
     projectName: '하남 커리어넷',
     projectPeriod: '2023.11 ~ 2023.12',
     person: '팀프로젝트 (프론트엔드: 2명, 백엔드: 5명, 기획자: 3명, 디자이너: 2명)',
-    description: '진로 및 진학 정보와 다양한 체험 활동으 소개하는 플랫폼입니다.',
+    description: '진로 및 진학 정보와 다양한 체험 활동을 소개하는 플랫폼입니다.',
     stack: [
       { icon: 'nuxt', txt: 'Nuxt.js' },
       { icon: 'sass', txt: 'SASS' },
