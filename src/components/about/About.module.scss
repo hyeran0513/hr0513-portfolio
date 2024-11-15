@@ -1,4 +1,5 @@
 .page {
+  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -6,8 +7,41 @@
   max-width: 1440px;
   height: 100vh;
 
+  &::before {
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    opacity: .2;
+    background: var(--bg-image) no-repeat top;
+    animation: float 5s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
   .info {
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
     margin-bottom: 60px;
+
+    .photo {
+      width: 180px;
+      height: 220px;
+      border-radius: 10px;
+    }
 
     .userName {
       font-size: 40px;

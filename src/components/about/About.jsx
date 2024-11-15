@@ -18,26 +18,40 @@ const About = () => {
   ];
 
   return (
-    <div className={styles.page}>
+    <div
+      className={styles.page}
+      style={{
+        "--bg-image": `url(${process.env.ASSET_PREFIX}/bg_about.png)`,
+      }}
+    >
       <div className={styles.info}>
-        <div className={styles.userName}>김혜란</div>
-        <div className={styles.age}>2000 (24세)</div>
+        <div
+          className={styles.photo}
+          style={{
+            background: `url(${process.env.ASSET_PREFIX}/me.jpg) no-repeat center/cover`,
+          }}
+        ></div>
 
-        <div className={styles.contactInfo}>
-          <div className={styles.infoItem}>
-            <div className={styles.infoTitle}>이메일</div>
-            <div className={styles.infoContent}>hr_0513@naver.com</div>
-          </div>
+        <div className={styles.userInfo}>
+          <div className={styles.userName}>김혜란</div>
+          <div className={styles.age}>2000 (24세)</div>
 
-          <div className={styles.infoItem}>
-            <div className={styles.infoTitle}>휴대폰</div>
-            <div className={styles.infoContent}>010-3129-8980</div>
-          </div>
+          <div className={styles.contactInfo}>
+            <div className={styles.infoItem}>
+              <div className={styles.infoTitle}>이메일</div>
+              <div className={styles.infoContent}>hr_0513@naver.com</div>
+            </div>
 
-          <div className={styles.infoItem}>
-            <div className={styles.infoTitle}>깃허브</div>
-            <div className={styles.infoContent}>
-              https://github.com/hyeran0513
+            <div className={styles.infoItem}>
+              <div className={styles.infoTitle}>휴대폰</div>
+              <div className={styles.infoContent}>010-3129-8980</div>
+            </div>
+
+            <div className={styles.infoItem}>
+              <div className={styles.infoTitle}>깃허브</div>
+              <div className={styles.infoContent}>
+                https://github.com/hyeran0513
+              </div>
             </div>
           </div>
         </div>

@@ -5,13 +5,24 @@
   height: 50px;
   z-index: 100;
 
+  &:before {
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    opacity: .5;
+    background-color: #fff;
+    z-index: -1;
+  }
+
   &Inner {
     display: flex;
     align-items: center;
     margin: 0 auto;
     max-width: 1440px;
     height: 100%;
-    background-color: #fff;
 
     .logo {
       font-family: 'Tenada';
