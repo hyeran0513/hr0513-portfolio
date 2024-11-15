@@ -58,5 +58,5 @@ export const projects = [
     ],
     link: 'https://www.hdream.or.kr/',
     review: '이전에는 jQuery만 사용해본 경험이 있었지만, 이번 프로젝트를 통해 Nuxt3.js를 처음 사용해보았습니다. SPA 환경에서 단일 페이지로 동작하여 로딩 속도가 빠르고 컴포넌트 기반으로 효율적으로 관리하는 방법을 배우게 되었습니다.'
-  }
+  },
 ]

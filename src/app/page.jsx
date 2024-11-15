@@ -13,29 +13,24 @@ import Contact from "@/components/contact/Contact";
 export default function Home() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-  
-    const horizontal = document.querySelector("#horizontal");
+
     const sections = gsap.utils.toArray("#horizontal > section");
-  
+
     gsap.to(sections, {
       xPercent: -100 * (sections.length - 1),
       ease: "none",
       scrollTrigger: {
-        trigger: horizontal,
+        trigger: "#horizontal",
         start: "top top",
-        end: () => `+=${horizontal.scrollWidth - window.innerWidth}`,
+        end: `+=${document.querySelector("#horizontal").scrollWidth - window.innerWidth}`,
         pin: true,
         scrub: 1,
-        snap: {
-          snapTo: 1 / (sections.length - 1),
-          inertia: false,
-          duration: { min: 0.1, max: 0.1 },
-        },
+        snap: { snapTo: 1 / sections.length, inertia: false, duration: 0.1 },
         invalidateOnRefresh: true,
         anticipatePin: 1,
       },
     });
-  }, []);  
+  }, []);
 
   return (
     <main>
@@ -49,13 +44,13 @@ export default function Home() {
 
       <main id="horizontal" className={styles.horizontal}>
         {projects.map((project, index) => (
-          <section key={index} className={styles.section}>
+          <section key={index} className={styles.section} id={`hor${index}`}>
             <ProjectCard project={project} />
           </section>
         ))}
       </main>
 
-      <section id="connect" className={styles.section}>
+      <section id="contact" className={styles.section}>
         <Contact />
       </section>
     </main>
