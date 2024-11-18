@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+안녕하세요, 김혜란입니다. <br/>
+저의 프론트엔드 포트폴리오에 방문해 주셔서 감사합니다.
+<br/>
 
-## Getting Started
+## 사용 기술 & 라이브러리
 
-First, run the development server:
+### 프론트엔드 언어 & 라이브러리
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+| 기술 | 설명 |
+|------|------|
+| **React** | 사용자 인터페이스 구축을 위한 라이브러리 |
+| **Next.js** | React 기반의 프레임워크로 서버 사이드 렌더링 지원 |
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 기타 라이브러리
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+| 라이브러리 | 설명 |
+|------------|------|
+| **SCSS (SaaS)** | CSS의 확장 언어로, 변수와 믹스인 등을 지원 |
+| **GSAP** | 고성능 애니메이션 라이브러리 |
+| **html2canvas & jsPDF** | HTML을 캔버스로 변환 후 PDF로 저장 |
+| **React Icons** | 다양한 아이콘을 React 컴포넌트로 제공 |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<br/>
 
-## Learn More
+## 포트폴리오 링크
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[👉 김혜란 프론트엔드 포트폴리오 바로가기](https://hyeran0513.github.io/hr0513-portfolio/)
