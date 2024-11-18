@@ -1,214 +1,102 @@
 import React from "react";
 import styles from "./About.module.scss";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+
+import {
+  skillList,
+  contactDetails,
+  careerList,
+  certificationList,
+  projectList,
+} from "./data.js";
 
 const About = () => {
-  const skills = [
-    "Nuxt.js",
-    "Vue.js",
-    "Next.js",
-    "PHP",
-    "SCSS",
-    "HTML",
-    "jQuery",
-  ];
-
   return (
     <div
       className={styles.page}
       style={{
-        "--bg-image": `url(${process.env.ASSET_PREFIX}/bg_about.png)`,
+        "--backgroundImage": `url(${process.env.ASSET_PREFIX}/backgrounds/bg_about.png)`,
       }}
     >
-      <div className={styles.info}>
+      <div className={styles.infoSection}>
         <div
-          className={styles.photo}
+          className={styles.profilePhoto}
           style={{
-            background: `url(${process.env.ASSET_PREFIX}/me.jpg) no-repeat center/cover`,
+            background: `url(${process.env.ASSET_PREFIX}/profile/me.jpg) no-repeat center/cover`,
           }}
         ></div>
 
-        <div className={styles.userInfo}>
-          <div className={styles.userName}>김혜란</div>
-          <div className={styles.age}>2000 (24세)</div>
+        <div className={styles.personalInfo}>
+          <div className={styles.name}>김혜란</div>
+          <div className={styles.birthYear}>2000 (24세)</div>
 
-          <div className={styles.contactInfo}>
-            <div className={styles.infoItem}>
-              <div className={styles.infoTitle}>이메일</div>
-              <div className={styles.infoContent}>hr_0513@naver.com</div>
-            </div>
-
-            <div className={styles.infoItem}>
-              <div className={styles.infoTitle}>휴대폰</div>
-              <div className={styles.infoContent}>010-3129-8980</div>
-            </div>
-
-            <div className={styles.infoItem}>
-              <div className={styles.infoTitle}>깃허브</div>
-              <div className={styles.infoContent}>
-                https://github.com/hyeran0513
+          <div className={styles.contactDetails}>
+            {contactDetails.map((item, index) => (
+              <div key={index} className={styles.infoItem}>
+                <div className={styles.infoTitle}>{item.title}</div>
+                <div className={styles.infoContent}>{item.content}</div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
       <div className={styles.gridContainer}>
-        <div className={styles.career}>
+        <div className={styles.careerSection}>
           <p className={styles.title}>경력</p>
 
           <ul className={styles.list}>
-            <li className={styles.listItem}>
-              2023.11 ~ 2024.09 (주)윌비소프트 정규직 - 프론트엔드 & 퍼블리셔
-            </li>
-            <li className={styles.listItem}>
-              2022.08 ~ 2023.03 (주)핌즈 일학습병행 및 정규직 - 백엔드
-            </li>
+            {careerList.map((career, index) => (
+              <li key={index} className={styles.listItem}>
+                <div className={styles.period}>{career.period}</div>
+                <span className={styles.company}>{career.company}</span>
+                <span className={styles.employmentType}>
+                  {career.employmentType}
+                </span>
+                <span className={styles.role}>{career.role}</span>
+              </li>
+            ))}
           </ul>
         </div>
 
-        <div className={styles.award}>
+        <div className={styles.certificationSection}>
           <p className={styles.title}>자격/수상</p>
 
           <ul className={styles.list}>
-            <li className={styles.listItem}>2024.04 SQL개발자(SQLD 자격)</li>
-            <li className={styles.listItem}>2023.02 IPP형 일학습병행 우수상</li>
-            <li className={styles.listItem}>
-              2022.01 캡스톤디자인 경진대회 동상
-            </li>
-            <li className={styles.listItem}>2021.12 한이음 공모전 입선</li>
+            {certificationList.map((cert, index) => (
+              <li key={index} className={styles.listItem}>
+                <div className={styles.period}>{cert.date}</div>
+                <div className={styles.detail}>{cert.detail}</div>
+              </li>
+            ))}
           </ul>
         </div>
 
-        <div className={styles.skill}>
+        <div className={styles.skillSection}>
           <p className={styles.title}>스킬</p>
 
-          <div className={styles.stack}>
-            {skills &&
-              skills.map((item, index) => (
-                <div key={index} className={styles.stackItem}>
-                  {item}
-                </div>
-              ))}
+          <div className={styles.skillList}>
+            {skillList.map((skillItem, index) => (
+              <div key={index} className={styles.skillItem}>
+                {skillItem}
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className={styles.project}>
-          <p className={styles.title}>프로젝트 (최신순)</p>
+        <div className={styles.projectSection}>
+          <p className={styles.title}>프로젝트</p>
 
           <ul className={styles.list}>
-            <li className={styles.listItem}>
-              2024.07 ~ 2024.09 TIP 매니저 활동지원 시스템 (M.A.P) (주)
-              윌비소프트
-            </li>
-
-            <li className={styles.listItem}>
-              2024.01 ~ 2024.04 사스다(SAASDA) 서비스 홈페이지 (주) 윌비소프트
-            </li>
-
-            <li className={styles.listItem}>
-              2023.11 ~ 2024.09 사스다(SAASDA) 운영 홈페이지 (주) 윌비소프트
-            </li>
-
-            <li className={styles.listItem}>
-              2023.11 ~ 2023.12 하남 커리어넷 (주) 윌비소프트
-            </li>
-
-            <li className={styles.listItem}>
-              2022.08 ~ 2023.08 자사 홈페이지 웹 개발 및 유지보수 (주) 핌즈
-            </li>
+            {projectList.map((project, index) => (
+              <li key={index} className={styles.listItem}>
+                <div className={styles.period}>{project.period}</div>
+                <div className={styles.company}>{project.company}</div>
+                <div className={styles.projectName}>{project.name}</div>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
-
-      <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        className={styles.swiperContainer}
-      >
-        <SwiperSlide className={styles.swiperSlide}>
-          <div className={styles.career}>
-            <p className={styles.title}>경력</p>
-
-            <ul className={styles.list}>
-              <li className={styles.listItem}>
-                2023.11 ~ 2024.09 (주)윌비소프트 정규직 - 프론트엔드 & 퍼블리셔
-              </li>
-              <li className={styles.listItem}>
-                2022.08 ~ 2023.03 (주)핌즈 일학습병행 및 정규직 - 백엔드
-              </li>
-            </ul>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide className={styles.swiperSlide}>
-          <div className={styles.award}>
-            <p className={styles.title}>자격/수상</p>
-
-            <ul className={styles.list}>
-              <li className={styles.listItem}>2024.04 SQL개발자(SQLD 자격)</li>
-              <li className={styles.listItem}>
-                2023.02 IPP형 일학습병행 우수상
-              </li>
-              <li className={styles.listItem}>
-                2022.01 캡스톤디자인 경진대회 동상
-              </li>
-              <li className={styles.listItem}>2021.12 한이음 공모전 입선</li>
-            </ul>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide className={styles.swiperSlide}>
-          <div className={styles.skill}>
-            <p className={styles.title}>스킬</p>
-
-            <div className={styles.stack}>
-              {skills &&
-                skills.map((item, index) => (
-                  <div key={index} className={styles.stackItem}>
-                    {item}
-                  </div>
-                ))}
-            </div>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide className={styles.swiperSlide}>
-          <div className={styles.project}>
-            <p className={styles.title}>프로젝트 (최신순)</p>
-
-            <ul className={styles.list}>
-              <li className={styles.listItem}>
-                2024.07 ~ 2024.09 TIP 매니저 활동지원 시스템 (M.A.P) (주)
-                윌비소프트
-              </li>
-
-              <li className={styles.listItem}>
-                2024.01 ~ 2024.04 사스다(SAASDA) 서비스 홈페이지 (주) 윌비소프트
-              </li>
-
-              <li className={styles.listItem}>
-                2023.11 ~ 2024.09 사스다(SAASDA) 운영 홈페이지 (주) 윌비소프트
-              </li>
-
-              <li className={styles.listItem}>
-                2023.11 ~ 2023.12 하남 커리어넷 (주) 윌비소프트
-              </li>
-
-              <li className={styles.listItem}>
-                2022.08 ~ 2023.08 자사 홈페이지 웹 개발 및 유지보수 (주) 핌즈
-              </li>
-            </ul>
-          </div>
-        </SwiperSlide>
-      </Swiper>
     </div>
   );
 };

@@ -4,15 +4,15 @@ import styles from "./Profile.module.scss";
 import { PiMouseSimpleThin } from "react-icons/pi";
 
 const Profile = () => {
-  const userNameRef = useRef(null);
-  const frontendRef = useRef(null);
-  const portfolioRef = useRef(null);
+  const nameRef = useRef(null);
+  const frontendTextRef = useRef(null);
+  const portfolioTextRef = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline();
 
     tl.fromTo(
-      frontendRef.current,
+      frontendTextRef.current,
       {
         x: -200,
         opacity: 0,
@@ -27,7 +27,7 @@ const Profile = () => {
       }
     )
       .fromTo(
-        portfolioRef.current,
+        portfolioTextRef.current,
         {
           x: 200,
           opacity: 0,
@@ -43,7 +43,7 @@ const Profile = () => {
         "-=1"
       )
       .fromTo(
-        userNameRef.current,
+        nameRef.current,
         {
           scale: 3,
           opacity: 0,
@@ -64,15 +64,18 @@ const Profile = () => {
     <div
       className={styles.profile}
       style={{
-        "--bg-image": `url(${process.env.ASSET_PREFIX}/bg_about.png)`,
+        "--backgroundImage": `url(${process.env.ASSET_PREFIX}/backgrounds/bg_about.png)`,
+        "--backgroundMobImage": `url(${process.env.ASSET_PREFIX}/backgrounds/bg_mob_about.png)`,
       }}
     >
       <div className={styles.title}>
-        <div className={styles.userName} ref={userNameRef}>
+        <div className={styles.userName} ref={nameRef}>
           <span className={styles.sparkle}>김혜란</span>
         </div>
-        <div ref={frontendRef}>프론트엔드_</div>
-        <div ref={portfolioRef}>_포트폴리오</div>
+
+        <div ref={frontendTextRef}>프론트엔드_</div>
+
+        <div ref={portfolioTextRef}>_포트폴리오</div>
       </div>
 
       <PiMouseSimpleThin className={styles.mouseIcon} />

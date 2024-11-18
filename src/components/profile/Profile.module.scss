@@ -10,13 +10,13 @@
     content: "";
     height: 100%;
     left: 0;
-    opacity: .05;
     position: absolute;
     top: 0;
     width: 100%;
     opacity: .2;
-    background: var(--bg-image) no-repeat top;
+    background: var(--backgroundImage) no-repeat top;
     animation: float 5s ease-in-out infinite;
+    z-index: -1;
   }
 
   @keyframes float {
@@ -24,7 +24,7 @@
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-14px);
     }
     100% {
       transform: translateY(0);
@@ -79,8 +79,24 @@
 
 @media (max-width: 768px) {
   .profile {
+    &::before {
+      background: var(--backgroundMobImage) no-repeat center / cover;
+    }
+
     .title {
-      font-size: 50px;
+      font-size: 40px;
+    }
+
+    .userName {
+      top: -40px;
+      left: -30px;
+      padding: 12px 10px 5px 10px;
+      font-size: 24px;
+      border-radius: 4px;
+    }
+
+    .mouseIcon {
+      font-size: 40px;
     }
   }
 }

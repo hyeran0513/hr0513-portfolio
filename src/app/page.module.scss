@@ -11,3 +11,17 @@
   scroll-snap-type: x mandatory;
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .section {
+    height: auto;
+  }
+
+  .horizontal {
+    margin-top: 40px;
+    flex-direction: column;
+    gap: 20px;
+    scroll-snap-type: y mandatory;
+    overflow-y: hidden;
+  }
+}

@@ -17,7 +17,7 @@
     z-index: -1;
   }
 
-  &Inner {
+  &Content {
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -28,12 +28,12 @@
       font-family: 'Tenada';
     }
 
-    .pdfDownload {
+    .pdfDownloadSection {
       display: flex;
       align-items: center;
       margin-left: auto;
 
-      &Info {
+      .downloadInfo {
         display: flex;
         align-items: center;
         gap: 8px;
@@ -50,7 +50,7 @@
         }
       }
 
-      &Button {
+      .downloadButton {
         display: flex;
         align-items: center;
         gap: 10px;
@@ -80,10 +80,10 @@
 
 @media (max-width: 768px) {
   .header {
-    &Inner {
+    &Content {
       padding: 0 20px;
 
-      .pdfDownload {
+      .pdfDownloadSection {
         display: none;
       }
     }

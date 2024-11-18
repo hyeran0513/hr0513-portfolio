@@ -27,15 +27,21 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className={styles.page}>
+    <div
+      className={styles.page}
+      style={{
+        "--backgroundImage": `url(${process.env.ASSET_PREFIX}/backgrounds/bg_about.png)`,
+        "--backgroundMobImage": `url(${process.env.ASSET_PREFIX}/backgrounds/bg_mob_about.png)`,
+      }}
+    >
       <p ref={titleRef} className={styles.title}>
         Contact
       </p>
 
-      <ul className={styles.list}>
-        <li className={styles.listItem}>
+      <ul className={styles.contactList}>
+        <li className={styles.contactListItem}>
           <a
-            title="hyeran0513 깃허브 보러가기"
+            title="Visit Hyeran's GitHub"
             href="https://github.com/hyeran0513"
             target="_blank"
             rel="noopener noreferrer"
@@ -45,10 +51,10 @@ const Contact = () => {
           </a>
         </li>
 
-        <li className={styles.listItem}>
+        <li className={styles.contactListItem}>
           <a
-            title="hr_0513@naver.com에 연락하기"
-            href="#Contact"
+            title="Send an email to hr_0513@naver.com"
+            href="mailto:hr_0513@naver.com"
             target="_blank"
             rel="noopener noreferrer"
           >

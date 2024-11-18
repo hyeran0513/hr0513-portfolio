@@ -5,7 +5,7 @@ export const projects = [
     projectPeriod: '2024.07 ~ 2024.09',
     person: '팀프로젝트 (프론트엔드: 1명, 백엔드: 3명, 디자이너: 1명, 기획자: 1명)',
     description: '지사 관리, 정산 신청, GFSR, 활동 입력 등 다양한 매니저 활동지원 시스템입니다.',
-    stack: [
+    tech: [
       { icon: 'vue', txt: 'Vue.js' },
       { icon: 'sass', txt: 'SASS' },
       { icon: 'figma', txt: 'Figma' },
@@ -15,12 +15,12 @@ export const projects = [
     review: '프론트엔드 업무를 혼자 맡고 백엔드팀, 기획팀, 디자인팀과 협업하여 진행했던 외주 프로그램입니다. 디자인 인력이 부족해 모바일 디자인만 전달받았으며, PC 디자인은 다른 페이지를 참고하여 일관성을 유지했습니다. M.A.P와 관련된 코드에서는 Vue2에서 Vue3로 변환하는 작업을 진행했습니다.'
   },
   {
-    thumb: 'saasdaService.png',
+    thumb: 'saasda_service.png',
     projectName: '사스다(SAASDA) 서비스 홈페이지',
     projectPeriod: '2024.01 ~ 2024.04',
     person: '팀프로젝트 (프론트엔드: 2명, 백엔드: 2명, 기획자: 2명, 디자이너: 2명)',
     description: '윌비소프트 자사 프로그램인 사스다(SAASDA)에 대해 소개하는 사이트입니다.',
-    stack: [
+    tech: [
       { icon: 'nuxt', txt: 'Nuxt.js' },
       { icon: 'sass', txt: 'SASS' },
       { icon: 'figma', txt: 'Figma' },
@@ -35,7 +35,7 @@ export const projects = [
     projectPeriod: '2023.11 ~ 2024.09',
     person: '팀프로젝트 (프론트엔드: 3명, 백엔드: 7명, 기획자: 3명, 디자이너: 2명)',
     description: '맞춤형 콘텐츠와 실시간 학습 현황 분석으로 개개인에 꼭 맞는 학습 경험을 선사하는 교육 관리 시스템입니다.',
-    stack: [
+    tech: [
       { icon: 'nuxt', txt: 'Nuxt.js' },
       { icon: 'sass', txt: 'SASS' },
       { icon: 'figma', txt: 'Figma' },
@@ -50,7 +50,7 @@ export const projects = [
     projectPeriod: '2023.11 ~ 2023.12',
     person: '팀프로젝트 (프론트엔드: 2명, 백엔드: 5명, 기획자: 3명, 디자이너: 2명)',
     description: '진로 및 진학 정보와 다양한 체험 활동을 소개하는 플랫폼입니다.',
-    stack: [
+    tech: [
       { icon: 'nuxt', txt: 'Nuxt.js' },
       { icon: 'sass', txt: 'SASS' },
       { icon: 'figma', txt: 'Figma' },

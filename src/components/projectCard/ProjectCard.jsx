@@ -1,80 +1,71 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import styles from "./ProjectCard.module.scss";
 
-const ProjectCard = ({ project, projectIdx }) => {
-  const [thumbShow, setThumbShow] = useState(false);
-
+const ProjectCard = ({ project }) => {
   return (
-    <div className={styles.projectCard}>
-      <div className={`${styles.projectNum} ${styles[`projectNum${projectIdx + 1}`]}`}>PROJECT {projectIdx + 1}</div>
+    <div
+      className={styles.projectCard}
+      style={{
+        "--backgroundImage": `url(${process.env.ASSET_PREFIX}/backgrounds/bg_about.png)`,
+      }}
+    >
+      <p className={styles.projectTitle}>{project.projectName}</p>
 
-      <p className={styles.projectName}>{project.projectName}</p>
-
-      <div className={styles.projectInfo}>
-        <span className={styles.date}>{project.projectPeriod}</span>
-        <span className={styles.division}>/</span>
-        <span className={styles.person}>{project.person}</span>
+      <div className={styles.projectDetails}>
+        <div className={styles.projectPeriod}>{project.projectPeriod}</div>
+        <div className={styles.teamMembers}>{project.person}</div>
       </div>
 
       <p className={styles.projectDescription}>{project.description}</p>
 
-      <div className={`${styles.flexBox} ${thumbShow ? styles.isShow : ""}`}>
-        <div className={`${styles.thumb}`}>
-          <div
-            className={styles.thumbImg}
-            style={{
-              background: `url(${process.env.ASSET_PREFIX}/${project.thumb}) no-repeat center/cover`,
-            }}
-          ></div>
+      <div className={styles.projectContent}>
+        <div className={styles.projectInfo}>
+          <div className={styles.infoSection}>
+            <p className={styles.infoTitle}>보유 기술</p>
 
-          <button
-            onClick={() => setThumbShow(true)}
-            type="button"
-            title="자세히 보기"
-            className={styles.btnDetail}
-          >
-            자세히 보기
-          </button>
-        </div>
-
-        <div className={styles.info}>
-          <div className={styles.infoItem}>
-            <p className={styles.title}>
-              스택
-            </p>
-
-            <ul className={styles.stackList}>
-              {project.stack.map((tech, techIndex) => (
-                <li className={styles.stackItem} key={techIndex}>
+            <ul className={styles.techList}>
+              {project.tech.map((tech, index) => (
+                <li className={styles.techItem} key={index}>
                   <div
-                    className={`${styles.icon} ${styles[tech.icon]}`}
+                    className={`${styles.techIcon} ${styles[tech.icon]}`}
                     style={{
-                      background: `url(${process.env.ASSET_PREFIX}/stack.png) no-repeat center/auto 100%`,
+                      background: `url(${process.env.ASSET_PREFIX}/icons/icon_tech.png) no-repeat center/auto 100%`,
                     }}
                   ></div>
-                  <div className={styles.txt}>{tech.txt}</div>
+
+                  <div className={styles.techName}>{tech.txt}</div>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className={styles.infoItem}>
-            <p className={styles.title}>
-              링크
-            </p>
+          <div className={styles.infoSection}>
+            <p className={styles.infoTitle}>링크</p>
 
-            <a className={styles.link} href={project.link} target="_blank" rel="noopener noreferrer">
+            <a
+              className={styles.projectLink}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {project.link}
             </a>
           </div>
 
-          <div className={styles.infoItem}>
-            <p className={styles.title}>
-              소감
-            </p>
+          <div className={styles.infoSection}>
+            <p className={styles.infoTitle}>설명 및 성과</p>
 
-            <div className={styles.review}>{project.review}</div>
+            <div className={styles.projectReview}>{project.review}</div>
           </div>
+        </div>
+
+        <div className={styles.thumbnailWrapper}>
+          <div
+            className={styles.thumbnailImage}
+            style={{
+              background: `url(${process.env.ASSET_PREFIX}/project-thumbnails/${project.thumb}) no-repeat center/cover`,
+            }}
+          ></div>
         </div>
       </div>
     </div>
