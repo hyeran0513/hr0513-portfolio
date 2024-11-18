@@ -33,25 +33,16 @@
   }
 
   .infoSection {
-    display: flex;
-    align-items: flex-end;
-    gap: 40px;
     margin-bottom: 60px;
-
-    .profilePhoto {
-      width: 180px;
-      height: 220px;
-      border-radius: 10px;
-    }
 
     .personalInfo {
       .name {
         font-size: 40px;
-        font-family: "GmarketSansMedium";
+        font-family: var(--font-elice-bold);
       }
 
       .birthYear {
-        font-family: "GmarketSansMedium";
+        font-family: var(--font-elice-bold);
       }
 
       .contactDetails {
@@ -88,7 +79,7 @@
         padding: 10px 0 10px 20px;
         border-left: 6px solid #111;
         font-size: 24px;
-        font-family: "GmarketSansMedium";
+        font-family: var(--font-elice-bold);
       }
 
       .list {
@@ -106,7 +97,19 @@
 
           .company,
           .employmentType {
+            position: relative;
             margin-right: 10px;
+
+            &::after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              right: -6px;
+              transform: translateY(-48%);
+              width: 1px;
+              height: 14px;
+              background: #111;
+            }
           }
         }
       }
@@ -133,22 +136,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .page {
     padding: 0 20px;
     height: auto;
 
     .infoSection {
-      flex-direction: column;
-      align-items: flex-start;
-      margin: 30px 0;
-
-      .profilePhoto {
-        margin: 0 auto;
-        width: 150px;
-        height: 190px;
-        border-radius: 4px;
-      }
+      margin: 20px 0;
 
       .personalInfo {
         .name {
@@ -193,6 +187,20 @@
 
         .skillItem {
           font-size: 14px;
+        }
+      }
+
+      .projectSection {
+        .list {
+          &Item {
+            .company {
+              margin-right: 0;
+
+              &::after {
+                display: none;
+              }
+            }
+          }
         }
       }
     }

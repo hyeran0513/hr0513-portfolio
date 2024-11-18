@@ -16,7 +16,7 @@
     top: 0;
     width: 100%;
     opacity: 0.2;
-    background: var(--backgroundImage) no-repeat top;
+    background: var(--background-image) no-repeat top;
     animation: float 5s ease-in-out infinite;
     z-index: -1;
   }
@@ -33,15 +33,12 @@
     }
   }
 
-  &:not(:first-child) {
-    margin-top: 40px;
-  }
-
   .project {
     &Title {
+      margin-bottom: 10px;
       font-size: 28px;
       font-weight: bold;
-      font-family: "GmarketSansMedium";
+      font-family: var(--font-elice-bold);
     }
 
     &Details {
@@ -85,7 +82,7 @@
           margin-bottom: 20px;
           font-size: 20px;
           font-weight: bold;
-          font-family: "GmarketSansMedium";
+          font-family: var(--font-elice-bold);
         }
 
         .tech {
@@ -154,7 +151,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .projectCard {
     margin: 0 20px;
     height: auto;
@@ -186,7 +183,7 @@
       }
 
       &Content {
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 20px;
         margin-top: 30px;
         width: 100%;
@@ -196,7 +193,7 @@
           width: 100%;
 
           .thumbnailImage {
-            padding-top: 68%;
+            padding-top: 67.6%;
             height: auto;
           }
         }

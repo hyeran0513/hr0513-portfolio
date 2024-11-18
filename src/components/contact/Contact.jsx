@@ -30,8 +30,8 @@ const Contact = () => {
     <div
       className={styles.page}
       style={{
-        "--backgroundImage": `url(${process.env.ASSET_PREFIX}/backgrounds/bg_about.png)`,
-        "--backgroundMobImage": `url(${process.env.ASSET_PREFIX}/backgrounds/bg_mob_about.png)`,
+        "--background-image": `url(${process.env.ASSET_PREFIX}/backgrounds/bg_about.png)`,
+        "--background-mob-image": `url(${process.env.ASSET_PREFIX}/backgrounds/bg_mob_about.png)`,
       }}
     >
       <p ref={titleRef} className={styles.title}>
@@ -41,7 +41,7 @@ const Contact = () => {
       <ul className={styles.contactList}>
         <li className={styles.contactListItem}>
           <a
-            title="Visit Hyeran's GitHub"
+            title="hyeran0513 깃허브 방문하기"
             href="https://github.com/hyeran0513"
             target="_blank"
             rel="noopener noreferrer"
@@ -53,7 +53,7 @@ const Contact = () => {
 
         <li className={styles.contactListItem}>
           <a
-            title="Send an email to hr_0513@naver.com"
+            title="hr_0513@naver.com 메일 보내기"
             href="mailto:hr_0513@naver.com"
             target="_blank"
             rel="noopener noreferrer"

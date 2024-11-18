@@ -1,9 +1,8 @@
-.profile {
-  position: relative;
+.page {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 100px;
   height: 100vh;
 
   &::before {
@@ -13,8 +12,8 @@
     position: absolute;
     top: 0;
     width: 100%;
-    opacity: .2;
-    background: var(--backgroundImage) no-repeat top;
+    opacity: 0.2;
+    background: var(--background-image) no-repeat top;
     animation: float 5s ease-in-out infinite;
     z-index: -1;
   }
@@ -24,7 +23,7 @@
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-14px);
+      transform: translateY(-10px);
     }
     100% {
       transform: translateY(0);
@@ -32,24 +31,112 @@
   }
 
   .title {
-    position: relative;
-    font-size: 150px;
-    font-family: 'Tenada';
+    &Main {
+      margin-bottom: 8px;
+      font-family: "Tenada";
+      font-size: 84px;
+    }
+
+    &Sub {
+      font-family: "Tenada";
+      font-size: 84px;
+    }
   }
 
-  .userName {
-    position: absolute;
-    top: -90px;
-    left: -80px;
-    padding: 1.6rem 1.2rem 0 1.2rem;
-    font-size: 60px;
-    border-radius: 8px;
-    transform: rotate(-10deg);
-    z-index: -1;
-    background-size: 200% auto;
-    background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    color: #FFF;
+  .namecardWrapper {
+    position: relative;
+    padding: 40px 20px 30px 20px;
+    background: #111;
+    background: rgba($color: #fff, $alpha: 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    border: 1px solid #dadada;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(-100% - 309px);
+      left: calc(50% + 1px);
+      transform: translateX(-50%);
+      display: inline-block;
+      width: 140px;
+      height: 800px;
+      background: var(--namecard-line) no-repeat center / cover;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: inline-block;
+      width: 70px;
+      height: 10px;
+      background: rgba($color: #111, $alpha: 0.1);
+      border-radius: 8px;
+    }
+
+    .namecard {
+      position: relative;
+      padding: 30px;
+      width: 280px;
+      height: 400px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #fff;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: inline-block;
+        width: 100%;
+        height: 50%;
+        border-radius: 20px 20px 0 0;
+        background-image: linear-gradient(
+          to top right,
+          rgba(148, 167, 255, 0.5),
+          rgba(242, 196, 255, 0.5)
+        );
+      }
+
+      .profilePhoto {
+        position: absolute;
+        bottom: 0;
+        right: -32px;
+        width: 240px;
+        height: 240px;
+      }
+
+      .info {
+        margin-top: 20px;
+        height: 100%;
+
+        .userName {
+          &.ko {
+            margin-left: -4px;
+            font-family: var(--font-elice-bold);
+            font-size: 40px;
+          }
+
+          &.eg {
+            font-family: var(--font-elice-regular);
+            margin-top: -6px;
+            font-size: 20px;
+          }
+        }
+
+        .role {
+          display: inline-block;
+          margin-top: 4px;
+          padding: 4px 0;
+          border-top: 1px solid #111;
+          font-size: 14px;
+        }
+      }
+    }
   }
 
   .mouseIcon {
@@ -60,39 +147,96 @@
     font-size: 50px;
     animation: scroll 1.5s infinite;
   }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(-50%) translateY(10px);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+  }
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
+@media (max-width: 1500px) {
+  .page {
+    gap: 60px;
+    padding: 0 40px;
   }
-  50% {
-    transform: translateX(-50%) translateY(10px);
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
+}
+
+@media (max-width: 1080px) {
+  .page {
+    flex-direction: column-reverse;
+    gap: 40px;
+
+    .title {
+      text-align: center;
+
+      &Main,
+      &Sub {
+        font-size: 40px;
+      }
+    }
   }
 }
 
 @media (max-width: 768px) {
-  .profile {
+  .page {
+    padding: 0 20px;
+    gap: 30px;
+
     &::before {
-      background: var(--backgroundMobImage) no-repeat center / cover;
+      background: var(--background-mob-image) no-repeat center / cover;
     }
 
     .title {
-      font-size: 40px;
+      &Main {
+        margin-bottom: 0;
+        font-size: 32px;
+      }
+
+      &Sub {
+        font-size: 32px;
+      }
     }
 
-    .userName {
-      top: -40px;
-      left: -30px;
-      padding: 12px 10px 5px 10px;
-      font-size: 24px;
-      border-radius: 4px;
+    .namecardWrapper {
+      &::after {
+        top: calc(-100% - 386px);
+      }
+
+      .namecard {
+        padding: 20px;
+        width: 260px;
+        height: 324px;
+
+        .profilePhoto {
+          width: 210px;
+          height: 200px;
+        }
+
+        .info {
+          margin-top: 0;
+
+          .userName {
+            &.ko {
+              margin-bottom: 4px;
+              font-size: 28px;
+            }
+
+            &.eg {
+              font-size: 18px;
+            }
+          }
+        }
+      }
     }
 
     .mouseIcon {

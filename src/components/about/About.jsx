@@ -18,13 +18,6 @@ const About = () => {
       }}
     >
       <div className={styles.infoSection}>
-        <div
-          className={styles.profilePhoto}
-          style={{
-            background: `url(${process.env.ASSET_PREFIX}/profile/me.jpg) no-repeat center/cover`,
-          }}
-        ></div>
-
         <div className={styles.personalInfo}>
           <div className={styles.name}>김혜란</div>
           <div className={styles.birthYear}>2000 (24세)</div>

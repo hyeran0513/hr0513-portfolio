@@ -6,7 +6,7 @@ const ProjectCard = ({ project }) => {
     <div
       className={styles.projectCard}
       style={{
-        "--backgroundImage": `url(${process.env.ASSET_PREFIX}/backgrounds/bg_about.png)`,
+        "--background-image": `url(${process.env.ASSET_PREFIX}/backgrounds/bg_about.png)`,
       }}
     >
       <p className={styles.projectTitle}>{project.projectName}</p>
@@ -47,6 +47,7 @@ const ProjectCard = ({ project }) => {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
+              title={project.link}
             >
               {project.link}
             </a>

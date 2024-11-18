@@ -3,15 +3,27 @@ import "./globals.css";
 import Header from "@/layouts/header/Header";
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+  src: "./fonts/geist/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
 
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+  src: "./fonts/geist/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+});
+
+const eliceDigitalBaeumBold = localFont({
+  src: "./fonts/elice/EliceDigitalBaeum_Bold.woff",
+  variable: "--font-elice-bold",
+  weight: "bold",
+});
+
+const eliceDigitalBaeumRegular = localFont({
+  src: "./fonts/elice/EliceDigitalBaeum_Regular.woff",
+  variable: "--font-elice-regular",
+  weight: "normal",
 });
 
 export const metadata = {
@@ -22,7 +34,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${eliceDigitalBaeumBold.variable} ${eliceDigitalBaeumRegular.variable}`}
+      >
         <Header />
         {children}
       </body>
