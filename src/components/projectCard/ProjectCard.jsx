@@ -21,7 +21,7 @@ const ProjectCard = ({ project }) => {
       <div className={styles.projectContent}>
         <div className={styles.projectInfo}>
           <div className={styles.infoSection}>
-            <p className={styles.infoTitle}>보유 기술</p>
+            <p className={styles.infoTitle}>기술</p>
 
             <ul className={styles.techList}>
               {project.tech.map((tech, index) => (
